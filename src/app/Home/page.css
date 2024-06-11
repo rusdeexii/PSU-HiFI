@@ -1,0 +1,39 @@
+/* globals.css */
+.single-slider {
+    height: 780px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .single-slider.web27 {
+    background-image: url('/image/web_27.png');
+    width: 100%;
+  }
+  
+  .single-slider.home1 {
+    background-image: url('/image/home1.jpeg');
+    width: 100%;
+  }
+  
+  .single-slider.logo-video {
+    background-image: url('/image/logo-video.jpg');
+    width: 100%;
+  }
+  
+  /* Swiper Navigation */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #17a2b8;
+  }
+  
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #2C2D3F;
+  }
+  .swiper-slide img {
+    width: 60%;
+    height: 80%;
+    object-fit: cover;
+  }
+  

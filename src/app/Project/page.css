@@ -1,0 +1,127 @@
+ 
+    @media (min-width: 992px) {
+      .large-screen {
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .large-screen .row {
+          justify-content: center;
+      }
+  }
+  @media (max-width: 991px) {
+      .small-screen .col-lg-9 {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .small-screen .col-lg-3 {
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+  }
+.table-caption {
+font-family: 'Sarabun', sans-serif;
+    margin-bottom: 1rem;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+
+  
+  }
+  .table thead th {
+    background-color: #007bff;
+    color: #fff;
+ 
+  }
+  .table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+  
+  }
+  .table tbody tr:hover {
+    background-color: #e2e6ea;
+  }
+
+.table-caption {
+  font-family: 'Sarabun', sans-serif;
+  margin-bottom: 1rem;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+}
+
+.table thead th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+.table-responsive {
+  margin: 1rem 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+  border-bottom-width: 2px;
+}
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+  border: 0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+}
