@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.15.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",
@@ -17,8 +18,10 @@
     "next": "14.2.3",
     "npm": "^10.8.1",
     "react": "^18",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-toastify": "^10.0.5",
     "swiper": "^11.1.4"
   },
   "devDependencies": {
@@ -28,6 +31,7 @@
     "@types/owl.carousel": "^2.3.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "prisma": "^5.15.0",
     "typescript": "^5"
   }
 }

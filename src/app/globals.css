@@ -4,6 +4,10 @@
 /* globals.css */
 /* CSS for loader */
 /* CSS for loader */
+/* Add necessary CSS imports here */
+
+
+
 .loader-container {
   display: flex;
   justify-content: center;

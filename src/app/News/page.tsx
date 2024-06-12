@@ -1,131 +1,71 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+'use client'
+import { useEffect, useState } from 'react';
+import { FaCalendarAlt } from 'react-icons/fa';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Link from 'next/link';
 import './page.css'
-import { FaCalendarAlt } from "react-icons/fa";
+
+interface NewsItem {
+  id: number;
+  title: string;
+  content: string;
+  imageUrl: string;
+  createdAt: string;
+}
+
+const News = () => {
+  const [news, setNews] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('/api/news');
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const data = await response.json();
+        setNews(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
+    fetchNews();
+  }, []);
 
 
-function page() {
   return (
     <>
       <Header />
       <div className="container">
-        <div className="row mt-n5">
-          <div className="col-md-6 col-lg-4 mt-5">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Business tool for your customer</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><FaCalendarAlt style={{marginBottom:'6px'}}/> 10 Jul, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 38</a></li>
-                  </ul>
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          {news.map((item) => (
+            <div key={item.id} className="col">
+              <div className="card h-100">
+                <img src={item.imageUrl} className="card-img-top" alt="News" />
+                <div className="card-body">
+                  <h5 className="card-title">{item.title}</h5>
+                  <p className="card-text">{item.content}</p>
+                </div>
+                <div className="card-footer">
+                  <small className="text-muted">
+                    <FaCalendarAlt style={{ marginBottom: '3px' }} /> {item.createdAt}
+                  </small>
+                  <Link href={`/News/${item.id}`}>
+  <button className="btn btn-primary mt-3">อ่านเพิ่มเติม</button>
+</Link>
+
+
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-6 col-lg-4 mt-5 wow fadeInUp">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Growth your business strategy</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><i className="fas fa-calendar-alt" /> 25 Jun, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 68</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-4 mt-5 wow fadeInUp">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Business people success master plan</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><i className="fas fa-calendar-alt" /> 16 May, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 58</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-4 mt-5 wow fadeInUp">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Results professional report</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><i className="fas fa-calendar-alt" /> 02 Apr, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 38</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-4 mt-5 wow fadeInUp">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Business strategy concept</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><i className="fas fa-calendar-alt" /> 25 Mar, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 68</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-4 mt-5 wow fadeInUp">
-            <div className="blog-grid">
-              <div className="blog-grid-img position-relative"><img alt="img" src="https://static.naewna.com/uploads/files2017/images/01-(19).jpg" /></div>
-              <div className="blog-grid-text p-4">
-                <h3 className="h5 mb-3"><a href="#!">Business people meeting</a></h3>
-                <p className="display-30">Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                <div className="meta meta-style2">
-                  <ul>
-                    <li><a href="#!"><i className="fas fa-calendar-alt" /> 10 Feb, 2022</a></li>
-                    <li><a href="#!"><i className="fas fa-user" /> User</a></li>
-                    <li><a href="#!"><i className="fas fa-comments" /> 58</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row mt-6 wow fadeInUp">
-          <div className="col-12">
-            <div className="pagination text-small text-uppercase text-extra-dark-gray">
-              <ul>
-                <li><a href="#!"><i className="fas fa-long-arrow-alt-left me-1 d-none d-sm-inline-block" /> Prev</a></li>
-                <li className="active"><a href="#!">1</a></li>
-                <li><a href="#!">2</a></li>
-                <li><a href="#!">3</a></li>
-                <li><a href="#!">Next <i className="fas fa-long-arrow-alt-right ms-1 d-none d-sm-inline-block" /></a></li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default News;

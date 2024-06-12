@@ -332,7 +332,7 @@ const page: React.FC = () => {
           <h5>โครงการ ปี2563</h5>
         </div>
         <div className="table-responsive">
-          <table className="table custom-table">
+          <table className="table table-bordered table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">บริษัท</th>
@@ -401,7 +401,7 @@ const page: React.FC = () => {
           <h5>โครงการปี 2564</h5>
         </div>
         <div className="table-responsive">
-          <table className="table custom-table">
+          <table className="table table-bordered table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">บริษัท</th>
@@ -440,7 +440,7 @@ const page: React.FC = () => {
           <h5>โครงการปี 2565</h5>
         </div>
         <div className="table-responsive">
-          <table className="table custom-table">
+          <table className="table table-bordered table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">บริษัท</th>
@@ -484,7 +484,7 @@ const page: React.FC = () => {
           <h5>โครงการปี 2566</h5>
         </div>
         <div className="table-responsive">
-          <table className="table custom-table">
+          <table className="table table-bordered table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">บริษัท</th>
@@ -523,7 +523,7 @@ const page: React.FC = () => {
           <h5>โครงการปี 2567</h5>
         </div>
         <div className="table-responsive">
-          <table className="table custom-table">
+          <table className="table table-bordered table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">บริษัท</th>
