@@ -64,7 +64,7 @@ const NewsDetails = () => {
   }
 
   if (!newsItem) {
-    return <div>ข่าวสารนี้ถูกลบไปแล้ว</div>;
+    return <div className='container'>ข่าวสารนี้ถูกลบไปแล้ว</div>;
   }
 
   return (
