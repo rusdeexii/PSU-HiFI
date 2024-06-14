@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../globals.css';
 import Sidebar from '../components/Sidebar';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { MdPersonAddAlt1 } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";

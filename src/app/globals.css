@@ -323,7 +323,7 @@ body{
 	bottom: 0;
 	height: 3px;
 	width:0%;
-	background: #17a2b8;
+	background: #1A76D1;
 	border-radius: 5px 5px 0 0;
 	opacity:0;
 	visibility:hidden;
@@ -337,7 +337,7 @@ body{
 	width: 100%;
 }
 .header .nav li.active a{
-	color:#17a2b8;
+	color:#1A76D1;
 }
 .header .nav li:hover a:before{
 	opacity:1;
@@ -345,7 +345,7 @@ body{
 	visibility:visible;
 }
 .header .nav li:hover a{
-	color:#17a2b8;
+	color:#1A76D1;
 }
 .header .nav li a i {
 	display: inline-block;
@@ -391,7 +391,7 @@ body{
 	width: 40px;
 	line-height: 40px;
 	color: #fff;
-	background: #17a2b8;
+	background: #1A76D1;
 	border-radius: 4px;
 	text-align: center;
 	font-size: 15px;
@@ -426,7 +426,7 @@ body{
 	opacity: 0;
 	visibility: hidden;
 	top: 74px;
-	border-left:3px solid #17a2b8;
+	border-left:3px solid #1A76D1;
 }
 .header .nav li:hover .dropdown{
 	opacity:1;
@@ -459,7 +459,7 @@ body{
 	border-bottom:0px;
 }
 .header .nav li .dropdown li:hover a{
-	color:#17a2b8;
+	color:#1A76D1;
 }
 .header .nav li .dropdown li a:hover{
 	border-color:transparent;
@@ -484,7 +484,7 @@ body{
 	width: 35px;
 	line-height: 35px;
 	text-align: center;
-	background: #17a2b8;
+	background: #1A76D1;
 	border-radius: 4px;
 	display: block;
 	font-size: 12px;
@@ -537,7 +537,7 @@ body{
 	height: 50px;
 	top: 0;
 	width: 50px;
-	background: #17a2b8;
+	background: #1A76D1;
 	border: none;
 	color: #fff;
 	border-radius: 0 4px 4px 0;
@@ -545,7 +545,7 @@ body{
 }
 .header .search-form button:hover{
 	background:#fff;
-	color:#17a2b8;
+	color:#1A76D1;
 	border-color:#e6e6e6;
 }
 /* Header Sticky */
@@ -562,7 +562,7 @@ body{
 	box-shadow:0px 0px 13px #00000054;
 }
 .header .nav li.active a, .header .nav li a.active {
-    color: #17a2b8;
+    color: #1A76D1;
 }
 
 .header .nav li a:before {
@@ -572,7 +572,7 @@ body{
     bottom: 0;
     height: 3px;
     width: 0%;
-    background: #17a2b8;
+    background: #1A76D1;
     border-radius: 5px 5px 0 0;
     opacity: 0;
     visibility: hidden;
@@ -813,11 +813,11 @@ License Terms
 }
 .fun-facts.section{
 	padding:100px 0;
-	background-color: #000;
+	background-color: #06509b;
 }
 .fun-facts .section-title h2{
 	color:#fff;
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 	
 }
 .fun-facts{

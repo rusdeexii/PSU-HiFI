@@ -49,27 +49,27 @@ function page() {
                     {/* Thumbnails */}
                     <ol className="carousel-indicators list-inline">
                       <li className="list-inline-item active">
-                        <a id="carousel-selector-0" className="selected" data-slide-to={0} data-target="#custCarousel">
+                        <a >
                           <img src="image/workshop6.jpg" alt="workshop1" className="img-fluid" />
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a id="carousel-selector-1" data-slide-to={1} data-target="#custCarousel">
+                        <a >
                           <img src="image/workshop7.jpg" alt="workshop1" className="img-fluid" />
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a id="carousel-selector-2" data-slide-to={2} data-target="#custCarousel">
+                        <a>
                           <img src="image/workshop8.jpg" alt="workshop1" className="img-fluid" />
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a id="carousel-selector-3" data-slide-to={3} data-target="#custCarousel">
+                        <a >
                           <img src="image/workshop9.jpg" alt="workshop1" className="img-fluid" />
                         </a>
                       </li>
                       <li className="list-inline-item">
-                        <a id="carousel-selector-3" data-slide-to={3} data-target="#custCarousel">
+                        <a>
                           <img src="image/workshop5.jpg" alt="workshop1" className="img-fluid" />
                         </a>
                       </li>

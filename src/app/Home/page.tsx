@@ -7,6 +7,7 @@ import '../responsive.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './page.css';
+import { FaCirclePlay } from "react-icons/fa6";
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,6 +15,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import SwiperCore from 'swiper/core'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import ModalVideo from 'react-modal-video';
+import 'react-modal-video/css/modal-video.min.css';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -21,6 +24,7 @@ function HomePage() {
   const [loading, setLoading] = useState(true);
   const funFactsRef = useRef<HTMLDivElement>(null);
   const additionalFunFactsRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -125,7 +129,7 @@ function HomePage() {
         {/* Clients Section */}
         <section id="clients" className="clients section">
           <div className="container" data-aos="zoom-in">
-            <div className="section-title text-center">
+            <div className="section-title text-center mb-4">
               <h2>เครือข่ายมหาวิทยาลัย 2024</h2>
               <p>โครงการเครือข่ายการอุดมศึกษาเพื่ออุตสาหกรรม (Hi-FI) </p>
             </div>
@@ -153,7 +157,7 @@ function HomePage() {
         </section>
         {/* Start Fun-facts */}
         <div id="fun-facts" className="fun-facts section" ref={additionalFunFactsRef}>
-          <div className="section-title text-center">
+          <div className="section-title text-center mb-4">
             <h2>ผลการดำเนินงาน ในปี 2564-2567</h2>
           </div>
           <div className="container">
@@ -201,14 +205,12 @@ function HomePage() {
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
-          <div className="section-title">
+          <div className="section-title text-center mt-4 mb-4">
             <h2>มาทำความรู้จักกับ HiFI PSU  <i className="fa-solid fa-magnifying-glass" /></h2>
-  
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row mt-4 mb-4">
         <div className="col-lg-6 col-12">
           {/* Start Choose Left */}
           <div className="choose-left">
@@ -220,16 +222,16 @@ function HomePage() {
             <div className="row">
               <div className="col-lg-6">
                 <ul className="list">
-                  <li><i className="fa fa-caret-right" />Maecenas vitae luctus nibh. </li>
-                  <li><i className="fa fa-caret-right" />Duis massa massa.</li>
-                  <li><i className="fa fa-caret-right" />Aliquam feugiat interdum.</li>
+                  <li><i className="fa fa-caret-right" />นวัตกรรม </li>
+                  <li><i className="fa fa-caret-right" />ธุรกิจ</li>
+                  <li><i className="fa fa-caret-right" />ทุนสนับสนุน</li>
                 </ul>
               </div>
               <div className="col-lg-6">
                 <ul className="list">
-                  <li><i className="fa fa-caret-right" />Maecenas vitae luctus nibh. </li>
-                  <li><i className="fa fa-caret-right" />Duis massa massa.</li>
-                  <li><i className="fa fa-caret-right" />Aliquam feugiat interdum.</li>
+                  <li><i className="fa fa-caret-right" />บุคลากรคุณภาพ </li>
+                  <li><i className="fa fa-caret-right" />คำปรึกษา</li>
+                  <li><i className="fa fa-caret-right" />ความสำเร็จ</li>
                 </ul>
               </div>
             </div>
@@ -237,25 +239,30 @@ function HomePage() {
           {/* End Choose Left */}
         </div>
         <div className="col-lg-6 col-12">
-          {/* Start Choose Rights */}
-          <div className="choose-right">
-            <div className="video-image">
-              {/* Video Animation */}
-              <div className="promo-video">
-                <div className="waves-block">
-                  <div className="waves wave-1" />
-                  <div className="waves wave-2" />
-                  <div className="waves wave-3" />
-                </div>
-              </div>
-              {/*/ End Video Animation */}
-              <Link href="https://www.youtube.com/watch?v=Fbe8UYcbr4M" className="video video-popup mfp-iframe"><i className="fa fa-play" /></Link>
+      {/* Start Choose Rights */}
+      <div className="choose-right">
+        <div className="video-image">
+          {/* Video Animation */}
+          <div className="promo-video">
+            <div className="waves-block">
+              <div className="waves wave-1" />
+              <div className="waves wave-2" />
+              <div className="waves wave-3" />
             </div>
           </div>
-          {/* End Choose Rights */}
+          {/*/ End Video Animation */}
+          <button className="video video-popup mfp-iframe "  aria-label="Play video" onClick={() => setOpen(true) }>
+            <FaCirclePlay style={{marginBottom:'10px'}}/>
+          </button>
         </div>
       </div>
+      {/* End Choose Rights */}
+
+      <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="Fbe8UYcbr4M" onClose={() => setOpen(false)} />
     </div>
+    </div>
+    </div>
+    
   </section>
   {/*/ End Why choose */}
   {/* Start Fun-facts */}
@@ -263,23 +270,25 @@ function HomePage() {
   {/*/ End Fun-facts */}
   {/* Start Why choose */}
   {/* Start Call to action */}
-  <section className="section">
-    <div className="container" data-aos="zoom-in">
-      <div className="row">
-        <div className="col-md-6 text-center mt-4">
-          <h3>การพัฒนาเครือข่ายการอุดมศึกษาเพื่ออุตสาหกรรม (Hi-FI Consortium)</h3>
-          <div className="mt-4">
-            <p>ความร่วมมือและความต่อเนื่องกับภาคอุตสาหกรรมอย่างเป็นรูปธรรม โครงการการอุดมศึกษาเพื่ออุตสาหกรรม (Higher Education for Industry: Hi-FI) จึงถูกพัฒนาขึ้นจากปัญหาการขาดบุคลากรของภาคอุตสาหกรรมในระดับที่พร้อมปฏิบัติงานได้ โดยที่สถานศึกษามีส่วนร่วมในการพัฒนาทั้งด้านบุคลากรและการร่วมสร้างงานวิจัยที่มีศักยภาพในการใช้ประโยชน์เชิงพาณิชย์และสร้างทรัพย์สินทางปัญญาให้แก่บริษัทและมหาวิทยาลัยร่วมกัน
-            </p>
-          </div>
-        </div>
-        <p />
-        <div className="col-md-6 swiper wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset={0}>
-          <img src="image/map.png" alt="map" />
+ {/* Start Call to action */}
+<section className="section mt-4 mb-4">
+  <div className="container" data-aos="zoom-in">
+    <div className="row">
+      <div className="col-6 text-center mt-4">
+        <h3>การพัฒนาเครือข่ายการอุดมศึกษาเพื่ออุตสาหกรรม (Hi-FI Consortium)</h3>
+        <div className="mt-4">
+          <p>ความร่วมมือและความต่อเนื่องกับภาคอุตสาหกรรมอย่างเป็นรูปธรรม โครงการการอุดมศึกษาเพื่ออุตสาหกรรม (Higher Education for Industry: Hi-FI) จึงถูกพัฒนาขึ้นจากปัญหาการขาดบุคลากรของภาคอุตสาหกรรมในระดับที่พร้อมปฏิบัติงานได้ โดยที่สถานศึกษามีส่วนร่วมในการพัฒนาทั้งด้านบุคลากรและการร่วมสร้างงานวิจัยที่มีศักยภาพในการใช้ประโยชน์เชิงพาณิชย์และสร้างทรัพย์สินทางปัญญาให้แก่บริษัทและมหาวิทยาลัยร่วมกัน
+          </p>
         </div>
       </div>
+      <div className="col-6 swiper wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset={0}>
+        <img src="image/map.png" alt="map" />
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
   <section>
     {/*/ End Call to action */}
     {/* End Blog Area */}
@@ -287,36 +296,29 @@ function HomePage() {
     <section className="contact-us section">
       <div className="container">
         <div className="contact-info">
-          <div className="row">
+          <div className="row text-center">
             {/* single-info */}
-            <div className="col-lg-4 col-12 ">
+            <div className="col-lg-6 col-12 ">
               <div className="single-info">
                 <i className="icofont icofont-ui-call" />
                 <div className="content">
-                  <h3>+(000) 1234 56789</h3>
-                  <p>info@company.com</p>
+                  <h3>สอบถามเพิ่มเติม</h3>
+                  <p>Hifipsu@gmail.com</p>
+                  <p>FaceBook: PSU-HiFI</p>
                 </div>
               </div>
             </div>
             {/*/End single-info */}
             {/* single-info */}
-            <div className="col-lg-4 col-12 ">
-              <div className="single-info">
-                <i className="icofont-google-map" />
-                <div className="content">
-                  <h3>2 Fir e Brigade Road</h3>
-                  <p>Chittagonj, Lakshmipur</p>
-                </div>
-              </div>
-            </div>
-            {/*/End single-info */}
-            {/* single-info */}
-            <div className="col-lg-4 col-12 ">
+
+            <div className="col-lg-6 col-12 ">
               <div className="single-info">
                 <i className="icofont icofont-wall-clock" />
-                <div className="content">
-                  <h3>Mon - Sat: 8am - 5pm</h3>
-                  <p>Sunday Closed</p>
+                <div className="content text-center">
+                  <h3>สามารถเข้ามาสอบถามได้ในวัน-เวลาราชการ</h3>
+                  <p>จันทร์ - ศุกร์ เวลา 08.30 - 16.30</p>
+                  <p>อุทยานวิทยาศาสตร์ ม.อ.</p>
+                  
                 </div>
               </div>
             </div>

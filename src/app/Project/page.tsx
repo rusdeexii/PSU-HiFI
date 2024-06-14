@@ -324,7 +324,7 @@ const page: React.FC = () => {
       </section>
       
      <section>
-  <h1 className="section-title text-center mt-4">Projects by Year</h1>
+  <h1 className="section-title text-center mt-4">ข้อมูลโครงการแยกตามรายปี</h1>
   <div className="container-fluid mt-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset={0}>
     <div className="row">
       <div className="col-md-10 mx-auto">

@@ -1,0 +1,27 @@
+.card-img {
+    width: 100%;
+    max-width: 600px; /* กำหนดขนาดสูงสุดของรูปภาพ */
+    height: auto;
+    margin: 0 auto; /* จัดรูปภาพให้อยู่ตรงกลาง */
+    display: block;
+  }
+  
+  .card {
+    margin: 20px auto;
+    max-width: 800px; /* กำหนดขนาดสูงสุดของการ์ด */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  
+  .container h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
